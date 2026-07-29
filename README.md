@@ -1,4 +1,4 @@
-# DinkMatch (AlgoMatch)
+# DinkMatch
 ### *Local-First Multi-Objective Court Scheduling and Zero-Sum Rating Calibration Engine for Multi-Sport Racket Facilities*
 
 ---
