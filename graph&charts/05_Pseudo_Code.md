@@ -155,7 +155,6 @@ function triggerRankPromotionAlert(username: string, oldRank: string, newRank: s
     dispatchUIEvent("RANK_PROMOTION_ALERT", { username, oldRank, newRank, message: alertMsg });
     speakTTS(alertMsg);
 }
-```,StartLine:67,TargetContent:
 ```
 
 ---
