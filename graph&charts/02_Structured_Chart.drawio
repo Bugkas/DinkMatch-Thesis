@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="page1">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1200" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="root" value="DinkMatch Controller" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=2;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="50" width="180" height="50" />
+        </mxCell>
+        <mxCell id="m1" value="Queue Manager" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="200" y="180" width="140" height="50" />
+        </mxCell>
+        <mxCell id="m2" value="Matchmaking Solver" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="520" y="180" width="140" height="50" />
+        </mxCell>
+        <mxCell id="m3" value="CV Fault Analyzer" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="840" y="180" width="140" height="50" />
+        </mxCell>
+        <mxCell id="m11" value="PIN Authenticator" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="100" y="310" width="130" height="50" />
+        </mxCell>
+        <mxCell id="m12" value="Queue List Manager" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="260" y="310" width="130" height="50" />
+        </mxCell>
+        <mxCell id="m21" value="Heuristic Optimizer" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="440" y="310" width="130" height="50" />
+        </mxCell>
+        <mxCell id="m22" value="Elo &amp;amp; Rank Calibrator" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="600" y="310" width="140" height="50" />
+        </mxCell>
+        <mxCell id="m31" value="Camera Stream Capturer" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="780" y="310" width="140" height="50" />
+        </mxCell>
+        <mxCell id="m32" value="Foot Position Tracker" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#333333;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="940" y="310" width="140" height="50" />
+        </mxCell>
+        <mxCell id="edge_100" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.2;fontColor=#495057;fontSize=10;" edge="1" parent="1" source="root" target="m1">
+          <mxGeometry relative="1" />
+        </mxCell>
+        <mxCell id="edge_101" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.2;fontColor=#495057;fontSize=10;" edge="1" parent="1" source="root" target="m2">
+          <mxGeometry relative="1" />
+        </mxCell>
+        <mxCell id="edge_102" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.2;fontColor=#495057;fontSize=10;" edge="1" parent="1" source="root" target="m3">
+          <mxGeometry relative="1" />
+        </mxCell>
+        <mxCell id="edge_103" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.2;fontColor=#495057;fontSize=10;" edge="1" parent="1" source="m1" target="m11">
+          <mxGeometry relative="1" />
+        </mxCell>
+        <mxCell id="edge_104" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.2;fontColor=#495057;fontSize=10;" edge="1" parent="1" source="m1" target="m12">
+          <mxGeometry relative="1" />
+        </mxCell>
+        <mxCell id="edge_105" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.2;fontColor=#495057;fontSize=10;" edge="1" parent="1" source="m2" target="m21">
+          <mxGeometry relative="1" />
+        </mxCell>
+        <mxCell id="edge_106" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.2;fontColor=#495057;fontSize=10;" edge="1" parent="1" source="m2" target="m22">
+          <mxGeometry relative="1" />
+        </mxCell>
+        <mxCell id="edge_107" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.2;fontColor=#495057;fontSize=10;" edge="1" parent="1" source="m3" target="m31">
+          <mxGeometry relative="1" />
+        </mxCell>
+        <mxCell id="edge_108" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=1.2;fontColor=#495057;fontSize=10;" edge="1" parent="1" source="m3" target="m32">
+          <mxGeometry relative="1" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
