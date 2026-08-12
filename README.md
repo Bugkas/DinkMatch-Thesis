@@ -153,3 +153,7 @@ To validate rating calibration accuracy and matchmaking convergence, a comparati
 
 **Thesis Advisor:**
 *   **Charlie S. Marzan, PhD** - Dean, CCS / Thesis Committee Chair
+
+**Industry Collaborators & Technical Advisors (ZyberLab Solutions Inc.):**
+*   **Trinmar Boado** - Chief Technology Officer (CTO) / Technical Mentor & Collaborator
+*   **Lovely Boado** - Chief Financial Officer (CFO) / Project Consultant & Advisor
