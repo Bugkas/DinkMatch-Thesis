@@ -9,7 +9,6 @@ To meet academic evaluation standards and establish a commercialization path, th
 
 *   **Academic Subtitle:** *Local-First Multi-Objective Court Scheduling and Zero-Sum Rating Calibration Engine for Multi-Sport Racket Facilities*
 *   **Commercial Brand Name:** **DinkMatch** (Dynamic Intelligent Network for Kinetic Open-Play Matchmaking)
-*   **Legal/Corporate Entity:** **ZyberLab Solutions Inc.**
 *   **Academic Institution:** **Don Mariano Marcos Memorial State University (DMMMSU)**
 *   **Target Sports:** Racket and net-based sports featuring drop-in/open-play formats, including **Pickleball**, **Badminton**, **Table Tennis**, **Lawn Tennis**, and **Padel**.
 
@@ -143,9 +142,18 @@ To validate rating calibration accuracy and matchmaking convergence, a comparati
 
 ## 8. Research & Development Team
 
-Developed under **ZyberLab Solutions Inc.** in partnership with **Don Mariano Marcos Memorial State University (DMMMSU)**:
+**Student Researchers (DMMMSU College of Computer Science):**
 
-*   **Trinmar Boado** - Chief Technology Officer (CTO)
-*   **Lovely Boado** - Chief Financial Officer (CFO)
-*   **Charlie S. Marzan, PhD** - Research & Development Lead
-*   **Jericho Boado** - Student Researcher & Development Assistant
+*   **Boado, Jericho T.** - Student Leader / Representative
+*   **Agbunag, Joana Andrae J.** - Student Researcher
+*   **Boac, Chelsie Assyria P.** - Student Researcher
+*   **Boadilla, Maerose Joscel Czarinah V.** - Student Researcher
+*   **Geneta, Karina Joyce B.** - Student Researcher
+*   **Sison, Darmie A.** - Student Researcher
+
+**Thesis Advisor:**
+*   **[INSERT THESIS ADVISOR NAME]** - Thesis Advisor
+
+**Industry Collaborators & Technical Advisors (ZyberLab Solutions Inc.):**
+*   **Trinmar Boado** - Chief Technology Officer (CTO) / Technical Mentor & Collaborator
+*   **Lovely Boado** - Chief Financial Officer (CFO) / Project Consultant & Advisor

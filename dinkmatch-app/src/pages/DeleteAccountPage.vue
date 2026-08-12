@@ -21,7 +21,7 @@
           <template v-slot:avatar>
             <q-icon name="info" color="primary" />
           </template>
-          DinkMatch is developed by ZyberLab Solutions Inc. We respect your right to control your personal data.
+          DinkMatch is developed by DMMMSU Student Researchers in collaboration with ZyberLab Solutions Inc. We respect your right to control your personal data.
         </q-banner>
 
         <q-form v-if="!submitted" @submit="onSubmit">
