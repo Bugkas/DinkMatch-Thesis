@@ -152,7 +152,7 @@ To validate rating calibration accuracy and matchmaking convergence, a comparati
 *   **Sison, Darmie A.** - Student Researcher
 
 **Thesis Advisor:**
-*   **Charlie S. Marzan, PhD** - Dean, CCS / Thesis Committee Chair
+*   **[INSERT THESIS ADVISOR NAME]** - Thesis Advisor
 
 **Industry Collaborators & Technical Advisors (ZyberLab Solutions Inc.):**
 *   **Trinmar Boado** - Chief Technology Officer (CTO) / Technical Mentor & Collaborator
