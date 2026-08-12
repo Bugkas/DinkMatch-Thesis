@@ -1,0 +1,63 @@
+{
+  "name": "dinkmatch",
+  "version": "0.0.1",
+  "description": "Smart matchmaking for singles & doubles",
+  "productName": "DinkMatch - Queueing (Open Play)",
+  "author": "Trinmar Boado <timi.boado@gmail.com>",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "lint": "eslint --ext .js,.ts,.vue ./",
+    "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
+    "test": "vitest run",
+    "dev": "quasar dev",
+    "build": "quasar build -m pwa",
+    "build:aab": "cd android-twa && node build-bubblewrap.cjs"
+  },
+  "dependencies": {
+    "@kingdanx/edge-tts-browser": "^1.0.0",
+    "@likha-erp/likha-sdk": "^1.0.7",
+    "@quasar/extras": "^1.16.4",
+    "@tresjs/core": "^5.8.3",
+    "@trystero-p2p/nostr": "^0.25.3",
+    "echarts": "^6.1.0",
+    "html5-qrcode": "^2.3.8",
+    "qrcode": "^1.5.4",
+    "quasar": "^2.16.0",
+    "register-service-worker": "^1.7.2",
+    "three": "^0.185.1",
+    "vue": "^3.4.18",
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "@quasar/app-vite": "^2.0.0-beta.12",
+    "@types/node": "^20.5.9",
+    "@types/qrcode": "^1.5.6",
+    "@types/three": "^0.185.1",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "@vitejs/plugin-basic-ssl": "^1.2.0",
+    "@vitest/ui": "^4.1.9",
+    "autoprefixer": "^10.4.2",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-vue": "^9.0.0",
+    "prettier": "^3.0.3",
+    "typescript": "~5.3.0",
+    "vite-plugin-checker": "^0.6.4",
+    "vitest": "^4.1.9",
+    "vue-tsc": "^1.8.22",
+    "workbox-build": "^7.1.1",
+    "workbox-cacheable-response": "^7.1.0",
+    "workbox-core": "^7.1.0",
+    "workbox-expiration": "^7.1.0",
+    "workbox-precaching": "^7.1.0",
+    "workbox-routing": "^7.1.0",
+    "workbox-strategies": "^7.1.0"
+  },
+  "engines": {
+    "node": "^24 || ^22 || ^20 || ^18",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}
