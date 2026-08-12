@@ -4,6 +4,10 @@
   "description": "Smart matchmaking for singles & doubles",
   "productName": "DinkMatch - Queueing (Open Play)",
   "author": "Boado, Jericho T. (Leader), Agbunag, J. A., Boac, C. A., Boadilla, M. J., Geneta, K. J., Sison, D. A.",
+  "contributors": [
+    "Trinmar Boado (ZyberLab Solutions Inc. CTO)",
+    "Lovely Boado (ZyberLab Solutions Inc. CFO)"
+  ],
   "type": "module",
   "private": true,
   "scripts": {
