@@ -112,17 +112,17 @@ The pool points are distributed proportionally among teammates using the **large
 
 ## 6. Repository Diagram Assets
 
-All system architecture diagrams are located in the `graph&charts/` directory:
+All system architecture diagrams are located in the `graphs-and-charts/` directory:
 
 | Diagram Name | Asset Path | Description |
 | :--- | :--- | :--- |
-| **DFD Level 0 (Context)** | `graph&charts/01_DFD_Level0.drawio.png` | Context diagram showing kiosk boundary and external entity interfaces. |
-| **DFD Level 1** | `graph&charts/01_DFD_Level1.drawio.png` | Decomposes the kiosk into 6 core processes and 4 local data stores. |
-| **DFD Level 2 (Matchmaking)**| `graph&charts/01_DFD_Level2_Matchmaking.drawio.png` | Deep-dive decomposition of the Matchmaking Optimization Solver (Process 2.0). |
-| **DFD Level 2 (Video Fault)**| `graph&charts/01_DFD_Level2_VideoFault.drawio.png` | Exception handling and telemetry workflows for hardware/video faults. |
-| **Structured Chart** | `graph&charts/02_Structured_Chart.drawio.png` | High-level architectural partition of execution modules. |
-| **HIPO VTOC Diagram** | `graph&charts/03_HIPO_VTOC.drawio.png` | Visual Table of Contents mapping hierarchical functional components. |
-| **Entity-Relationship (ERD)** | `graph&charts/06_ERD.drawio.png` | Database schemas and relation mappings for local and cloud data structures. |
+| **DFD Level 0 (Context)** | `graphs-and-charts/pngs/01_DFD_lvl0.jpg` | Context diagram showing kiosk boundary and external entity interfaces. |
+| **DFD Level 1** | `graphs-and-charts/pngs/01_DFD_lvl1.png` | Decomposes the kiosk into 6 core processes and 4 local data stores. |
+| **DFD Level 2 (Matchmaking)**| `graphs-and-charts/pngs/01_DFD_lvl2 Process 2.0.png` | Deep-dive decomposition of the Matchmaking Optimization Solver (Process 2.0). |
+| **DFD Level 2 (Video Fault)**| `graphs-and-charts/pngs/01_DFD_lvl2 Process 7.0 .png` | Exception handling and telemetry workflows for hardware/video faults. |
+| **Structured Chart** | `graphs-and-charts/pngs/02_Structured_Chart.png` | High-level architectural partition of execution modules. |
+| **HIPO VTOC Diagram** | `graphs-and-charts/pngs/03_HIPO Diagram.png` | Visual Table of Contents mapping hierarchical functional components. |
+| **Entity-Relationship (ERD)** | `graphs-and-charts/pngs/06_ERD.png` | Database schemas and relation mappings for local and cloud data structures. |
 
 ---
 
