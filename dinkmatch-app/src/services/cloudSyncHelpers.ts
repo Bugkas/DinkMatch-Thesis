@@ -53,10 +53,7 @@ export const shouldMergeBeforePush = (
   serverTimestamp: number,
   lastSyncedServerTimestamp: number,
 ): boolean => {
-  return (
-    !!serverMatchmaking &&
-    serverTimestamp !== lastSyncedServerTimestamp
-  );
+  return !!serverMatchmaking && serverTimestamp !== lastSyncedServerTimestamp;
 };
 
 /**

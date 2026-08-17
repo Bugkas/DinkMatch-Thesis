@@ -2,7 +2,12 @@ import type { CompletedMatch } from 'src/services/matchmaking';
 
 function csvEscape(value: string | number | undefined): string {
   const str = value === undefined || value === null ? '' : String(value);
-  if (str.includes(',') || str.includes('"') || str.includes('\n') || str.includes('\r')) {
+  if (
+    str.includes(',') ||
+    str.includes('"') ||
+    str.includes('\n') ||
+    str.includes('\r')
+  ) {
     return '"' + str.replace(/"/g, '""') + '"';
   }
   return str;
@@ -65,7 +70,14 @@ export function buildDuprCsv(
       csvEscape(b2?.duprId || ''),
       csvEscape(m.teamAScore),
       csvEscape(m.teamBScore),
-      '', '', '', '', '', '', '', '', // games 2-5 blank
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      '', // games 2-5 blank
     ].join(',');
   });
 

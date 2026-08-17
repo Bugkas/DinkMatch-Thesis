@@ -9,7 +9,9 @@
         <q-btn flat dense no-caps label="Login" @click="goLogin" />
         <q-btn flat dense no-caps label="Open Play" @click="goOpenPlay" />
       </div>
-      <div class="text-caption text-grey-6">&copy; {{ currentYear }} DinkMatch</div>
+      <div class="text-caption text-grey-6">
+        &copy; {{ currentYear }} DinkMatch
+      </div>
     </div>
   </footer>
 </template>

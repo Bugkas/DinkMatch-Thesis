@@ -7,7 +7,8 @@ import {
 } from '@likha-erp/likha-sdk';
 import { LocalStorage } from 'quasar';
 
-const LIKHA_URL = 'https://api.dinkmatch.club';
+const LIKHA_URL =
+  import.meta.env.VITE_LIKHA_URL || 'https://api.dinkmatch.club';
 
 // Custom Storage adapter for Likha SDK utilizing Quasar's LocalStorage.
 // Token mode (not cookies) so auth works on iOS Safari, which blocks
@@ -51,9 +52,11 @@ const _client = createLikha(LIKHA_URL)
 // valid. Without this, users see random error toasts on wake.
 let _refreshing: Promise<unknown> | null = null;
 const originalRequest = _client.request.bind(_client);
-_client.request = async function (fn: never) {
+type RequestOptions = Parameters<typeof originalRequest>[0];
+
+_client.request = (async <T>(options: RequestOptions): Promise<T> => {
   try {
-    return await originalRequest(fn);
+    return (await originalRequest(options)) as T;
   } catch (err: unknown) {
     const error = err as { response?: { status?: number } };
     if (error?.response?.status !== 401) throw err;
@@ -68,9 +71,9 @@ _client.request = async function (fn: never) {
     } catch {
       throw err; // refresh failed — throw original 401
     }
-    return await originalRequest(fn);
+    return (await originalRequest(options)) as T;
   }
-} as typeof _client.request;
+}) as typeof _client.request;
 
 const likhaClient = _client;
 

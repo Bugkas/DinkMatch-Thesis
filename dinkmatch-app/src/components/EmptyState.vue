@@ -20,7 +20,7 @@ interface Props {
 
 withDefaults(defineProps<Props>(), {
   iconSize: '48px',
-  iconColor: 'grey-4'
+  iconColor: 'grey-4',
 });
 </script>
 

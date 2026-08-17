@@ -46,9 +46,7 @@ function expected(a: number, b: number): number {
 
 function teamRating(players: { rating: number }[]): number {
   if (players.length === 0) return 1500;
-  return (
-    players.reduce((s, p) => s + (p.rating || 1500), 0) / players.length
-  );
+  return players.reduce((s, p) => s + (p.rating || 1500), 0) / players.length;
 }
 
 function allocateInteger(total: number, weights: number[]): number[] {
