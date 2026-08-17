@@ -152,8 +152,7 @@ To validate rating calibration accuracy and matchmaking convergence, a comparati
 *   **Sison, Darmie A.** - Student Researcher
 
 **Thesis Advisor:**
-*   **[INSERT THESIS ADVISOR NAME]** - Thesis Advisor
+*   **Malaya, Ara Rivina N.** - Thesis Advisor
 
 **Industry Collaborators & Technical Advisors (ZyberLab Solutions Inc.):**
 *   **Trinmar Boado** - Chief Technology Officer (CTO) / Technical Mentor & Collaborator
-*   **Lovely Boado** - Chief Financial Officer (CFO) / Project Consultant & Advisor
