@@ -22,8 +22,7 @@
         <div class="text-subtitle2 q-mb-sm">
           Choose a player to replace
           <strong>{{
-            playerToReplaceInEdit?.firstName ||
-            playerToReplaceInEdit?.username
+            playerToReplaceInEdit?.firstName || playerToReplaceInEdit?.username
           }}</strong>
           with:
         </div>
@@ -59,9 +58,7 @@
                 @{{ player.username }}
               </q-item-label>
               <q-item-label caption class="player-stats">
-                <span class="text-grey-7"
-                  >G:{{ player.matchesPlayed }}</span
-                >
+                <span class="text-grey-7">G:{{ player.matchesPlayed }}</span>
                 <span
                   class="q-ml-xs text-positive"
                   v-if="player.wins !== undefined"
@@ -105,10 +102,7 @@
           color="grey"
           @click="$emit('update:modelValue', false)"
         >
-          <q-tooltip
-            anchor="top middle"
-            self="bottom middle"
-            :offset="[8, 8]"
+          <q-tooltip anchor="top middle" self="bottom middle" :offset="[8, 8]"
             >Cancel</q-tooltip
           >
         </q-btn>

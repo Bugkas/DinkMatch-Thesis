@@ -112,9 +112,7 @@
                 style="top: -4px; right: -4px"
               >
                 {{
-                  unreadClubFeedbackCount > 99
-                    ? '99+'
-                    : unreadClubFeedbackCount
+                  unreadClubFeedbackCount > 99 ? '99+' : unreadClubFeedbackCount
                 }}
               </q-badge>
               <q-tooltip

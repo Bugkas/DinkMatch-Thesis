@@ -124,9 +124,7 @@ export function useLeaderboard(context: UseLeaderboardContext) {
         }
       }
 
-      const memberMap = new Map(
-        clubMembers.value.map((m) => [m.username, m]),
-      );
+      const memberMap = new Map(clubMembers.value.map((m) => [m.username, m]));
       const list = Object.values(replayed)
         .filter((p) => userMap.has(p.username))
         .map((p) => {
@@ -135,8 +133,7 @@ export function useLeaderboard(context: UseLeaderboardContext) {
           return {
             id: member?.id || p.username,
             username: p.username,
-            firstName:
-              member?.firstName || user?.firstName || p.firstName,
+            firstName: member?.firstName || user?.firstName || p.firstName,
             lastName: member?.lastName || user?.lastName || p.lastName,
             rating: p.rating,
             avatar: resolveAvatarUrl(
@@ -146,15 +143,11 @@ export function useLeaderboard(context: UseLeaderboardContext) {
             losses: p.losses,
             games: p.matchesPlayed,
             score: Math.round(p.rating),
-            winRate:
-              p.matchesPlayed > 0
-                ? (p.wins / p.matchesPlayed) * 100
-                : 0,
+            winRate: p.matchesPlayed > 0 ? (p.wins / p.matchesPlayed) * 100 : 0,
           };
         });
       const sorted = list.sort(
-        (a, b) =>
-          b.score - a.score || (b.rating || 1450) - (a.rating || 1450),
+        (a, b) => b.score - a.score || (b.rating || 1450) - (a.rating || 1450),
       );
       clubLeaderboard.value = sorted.slice(0, 20);
       saveCachedClubLeaderboard();

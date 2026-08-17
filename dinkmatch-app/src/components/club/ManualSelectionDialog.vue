@@ -79,12 +79,7 @@
       <q-card-actions align="right" class="q-pa-md">
         <!-- Step 1 Actions -->
         <template v-if="manualSelectionStep === 1">
-          <q-btn
-            flat
-            label="Cancel"
-            color="grey"
-            @click="$emit('cancel')"
-          />
+          <q-btn flat label="Cancel" color="grey" @click="$emit('cancel')" />
           <q-btn
             v-if="matchType === 'doubles'"
             color="accent"
@@ -112,12 +107,7 @@
             color="grey"
             @click="$emit('back')"
           />
-          <q-btn
-            flat
-            label="Cancel"
-            color="grey"
-            @click="$emit('cancel')"
-          />
+          <q-btn flat label="Cancel" color="grey" @click="$emit('cancel')" />
           <q-btn
             color="accent"
             label="Create Match"
@@ -159,9 +149,9 @@ defineEmits<{
   'update:manualTeam1': [value: Player[]];
   'update:manualTeam2': [value: Player[]];
   'toggle-player': [player: Player];
-  'cancel': [];
-  'proceed': [];
-  'create': [];
-  'back': [];
+  cancel: [];
+  proceed: [];
+  create: [];
+  back: [];
 }>();
 </script>

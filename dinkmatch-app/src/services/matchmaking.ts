@@ -397,6 +397,13 @@ const RATING_FLOOR = 100;
 // more than 2x the weak partner's gain/loss.
 const MAX_PARTNER_RATIO = 2.0;
 
+// Novelty scoring weights for variety vs balance heuristics
+const NOVELTY_WEIGHTS = {
+  balanced_variety: { partner: 25, opponent: 8 },
+  balance_first: { partner: 50, opponent: 15 },
+  default: { partner: 50, opponent: 15 },
+} as const;
+
 /**
  * Distribute an integer `total` across `weights` proportionally, guaranteeing
  * the rounded parts sum EXACTLY to `total` (largest-remainder method). This is
@@ -600,8 +607,9 @@ export const MatchmakerEngine = {
 
       if (mode === 'balance_first' || mode === 'balanced_variety') {
         // Combined-score behavior: balance + novelty penalty
-        const partnerWeight = mode === 'balanced_variety' ? 25 : 50;
-        const opponentWeight = mode === 'balanced_variety' ? 8 : 15;
+        const weights = NOVELTY_WEIGHTS[mode] || NOVELTY_WEIGHTS.default;
+        const partnerWeight = weights.partner;
+        const opponentWeight = weights.opponent;
         let noveltyPenalty = 0;
         const addTeamPenalty = (team: Player[]) => {
           for (let i = 0; i < team.length; i++) {
