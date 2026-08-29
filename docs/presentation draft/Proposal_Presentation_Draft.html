@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DinkMatch Proposal Presentation Draft</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #e5e5e5;
+            color: #000;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .slide {
+            background-color: #fff;
+            border: 1px solid #000;
+            width: 1280px;
+            min-height: 720px; /* 16:9 aspect ratio */
+            margin-bottom: 50px;
+            padding: 60px;
+            box-sizing: border-box;
+            position: relative;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 18px;
+        }
+        .presenter {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 5px 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        h1, h2 {
+            margin-top: 0;
+        }
+        h2 {
+            font-size: 40px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        ul {
+            font-size: 30px;
+            line-height: 1.8;
+            margin-left: 20px;
+            padding-right: 20px;
+        }
+        li {
+            margin-bottom: 20px;
+        }
+        .title-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .title-slide h1 {
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+        .title-slide p {
+            font-size: 28px;
+            margin: 10px 0;
+        }
+        .highlight {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1 -->
+    <div class="slide">
+        <div class="presenter">Presenter 1</div>
+        <div class="title-slide">
+            <h1>DinkMatch: A Digital Queueing and Skill-Based Matchmaking System for Racket Sports Facilities</h1>
+            <br>
+            <p><strong>Proponents:</strong></p>
+            <p>Boado, Agbunag, Boac, Boadilla, Geneta, Sison</p>
+            <br>
+            <p><strong>Thesis Adviser:</strong> Ara Rivina N. Malaya, MSCS</p>
+            <p><strong>Client:</strong> ZyberLab Solutions Inc.</p>
+        </div>
+        <div class="slide-number">Slide 1</div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+        <div class="presenter">Presenter 1</div>
+        <h2>Situation Analysis: The Operational Problem</h2>
+        <ul>
+            <li>Current racket facilities rely on manual "paddle-rack" systems (First-In, First-Out queueing).</li>
+            <li><span class="highlight">The Skill Disparity Dilemma:</span> FIFO queueing matches players randomly by arrival, ignoring skill level, leading to unbalanced, low-quality matches.</li>
+            <li><span class="highlight">Capacity Blindness:</span> Manual systems cannot dynamically manage court assignments, leading to idle courts despite long player lines.</li>
+            <li><span class="highlight">Social Friction:</span> Physical queues encourage "ghost stacking" and "queue sniping" as players attempt to manipulate matchups.</li>
+        </ul>
+        <div class="slide-number">Slide 2</div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+        <div class="presenter">Presenter 1</div>
+        <h2>Research Design & Scope</h2>
+        <ul>
+            <li><strong>Research Design:</strong> Mixed Research Design (Developmental and Experimental Phases).</li>
+            <li><strong>Developmental Phase:</strong> Designing and building the DinkMatch system, PM-Elo rating engine, and Likha ERP synchronization.</li>
+            <li><strong>Experimental Phase:</strong> Validating efficiency via Monte Carlo simulations and field trials with walk-in players.</li>
+            <li><strong>Time & Place:</strong> June 2026 to March 2027 at the College of Computer Science (DMMMSU-SLUC) and racket clubs in Agoo, La Union.</li>
+        </ul>
+        <div class="slide-number">Slide 3</div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide">
+        <div class="presenter">Presenter 2</div>
+        <h2>Specific Objective 1 (Design Phase)</h2>
+        <ul>
+            <li><strong>Objective Statement:</strong> Design and adapt a stateless, zero-sum point-margin-scaled Elo rating engine (PM-Elo) and a multi-objective matchmaking solver based on a parameterized cost function.</li>
+            <li><strong>Why PM-Elo?</strong> 
+                <ul>
+                    <li>Calculates rating updates based on actual point share (ratio of points won) instead of a binary win/loss.</li>
+                    <li>Operates statelessly to support local, offline-first kiosk functionality.</li>
+                </ul>
+            </li>
+            <li><strong>Matchmaking Solver:</strong> Dynamically selects the optimal group of 4 players from the queue based on a configurable cost function.</li>
+        </ul>
+        <div class="slide-number">Slide 4</div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide">
+        <div class="presenter">Presenter 2</div>
+        <h2>SOO 1: Data Gathered</h2>
+        <ul>
+            <li><strong>Rating Engine Parameters:</strong>
+                <ul>
+                    <li>Initial rating seeds (e.g., R0 = 1200)</li>
+                    <li>K-factor scaling constants (e.g., K = 32)</li>
+                    <li>Anti-carry discount modifiers to prevent artificial rating inflation.</li>
+                    <li>Partner rating change caps.</li>
+                </ul>
+            </li>
+            <li><strong>Matchmaking Cost Function Parameters:</strong>
+                <ul>
+                    <li>Skill variance weight (w<sub>skill</sub>)</li>
+                    <li>Wait penalty weight (w<sub>wait</sub>) across 5 operational modes (Fair Play, Social Mixer, Balanced Mix, Competitive Mix, All-Star Match).</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="slide-number">Slide 5</div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="slide">
+        <div class="presenter">Presenter 2</div>
+        <h2>SOO 1: Data Analysis</h2>
+        <ul>
+            <li><strong>Formal Mathematical Verification:</strong> Ensuring the cost function formulas and rating updates are logically sound.</li>
+            <li><strong>Internal Consistency Testing:</strong> Validating that the formulas react predictably to various match outcomes.</li>
+            <li><strong>Constraint Verification:</strong>
+                <ul>
+                    <li>Validating non-negativity constraints for wait penalties.</li>
+                    <li>Ensuring zero-sum balance (points gained by the winner perfectly offset points lost by the loser).</li>
+                    <li>Verifying numerical stability across extreme score margins.</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="slide-number">Slide 6</div>
+    </div>
+
+    <!-- Slide 7 -->
+    <div class="slide">
+        <div class="presenter">Presenter 3</div>
+        <h2>Specific Objective 2 (Development Phase)</h2>
+        <ul>
+            <li><strong>Objective Statement:</strong> Develop the DinkMatch system utilizing specific advanced technologies.</li>
+            <li><strong>Core Subsystems Built:</strong>
+                <ul>
+                    <li><strong>Client Kiosk:</strong> An offline-first touchscreen application built using Vue 3 and Quasar.</li>
+                    <li><strong>Synchronization Middleware:</strong> Asynchronous database syncing to Likha ERP via the <code>@likha-erp/likha-sdk</code>.</li>
+                    <li><strong>Edge Computer Vision:</strong> YOLO11n-pose line-fault detection running locally on edge hardware.</li>
+                    <li><strong>Generative AI:</strong> LLM-driven session recap engine for court coordinators.</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="slide-number">Slide 7</div>
+    </div>
+
+    <!-- Slide 8 -->
+    <div class="slide">
+        <div class="presenter">Presenter 3</div>
+        <h2>SOO 2: Data Gathered</h2>
+        <ul>
+            <li><strong>System Telemetry (Alpha & Beta Testing):</strong>
+                <ul>
+                    <li>Local database write success rates and offline data persistence rates.</li>
+                    <li>API packet delivery rates to Likha ERP.</li>
+                    <li>Local database buffer usage (KB) and client UI response latency (ms).</li>
+                </ul>
+            </li>
+            <li><strong>Computer Vision Logs:</strong>
+                <ul>
+                    <li>True Positive (TP) counts of accurately identified foot-faults.</li>
+                    <li>False Positive (FP) and False Negative (FN) detection logs during court trials.</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="slide-number">Slide 8</div>
+    </div>
+
+    <!-- Slide 9 -->
+    <div class="slide">
+        <div class="presenter">Presenter 3</div>
+        <h2>SOO 2: Data Analysis</h2>
+        <ul>
+            <li><strong>Descriptive Statistics for Telemetry:</strong>
+                <ul>
+                    <li>Percentage frequencies, arithmetic mean (x̄), and standard deviation (s) for network latency and data sync success rates.</li>
+                </ul>
+            </li>
+            <li><strong>Classification Accuracy Metrics (Computer Vision):</strong>
+                <ul>
+                    <li><strong>Precision:</strong> Proportion of flagged foot-fault alerts that were valid.</li>
+                    <li><strong>Recall:</strong> Proportion of actual line violations successfully detected.</li>
+                    <li><strong>F1-Score:</strong> Harmonic mean balancing precision and recall.</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="slide-number">Slide 9</div>
+    </div>
+
+    <!-- Slide 10 -->
+    <div class="slide">
+        <div class="presenter">Presenter 4</div>
+        <h2>Specific Objective 3.1 (Matchmaking Efficiency)</h2>
+        <ul>
+            <li><strong>Objective Statement:</strong> Evaluate the matchmaking efficiency and queue dynamics of the DinkMatch system.</li>
+            <li><strong>Methodology:</strong>
+                <ul>
+                    <li>Discrete-event simulations built in Python using the SimPy library.</li>
+                    <li>Synthetic player cohorts (N=50) modeled on Poisson arrival processes.</li>
+                    <li>Two test branches: Control Group (Strict FIFO) vs. Experimental Group (DinkMatch Multi-Objective Solver).</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="slide-number">Slide 10</div>
+    </div>
+
+    <!-- Slide 11 -->
+    <div class="slide">
+        <div class="presenter">Presenter 4</div>
+        <h2>SOO 3.1: Data Gathered & Analysis</h2>
+        <ul>
+            <li><strong>Data Gathered (from 50 Simulation Runs):</strong>
+                <ul>
+                    <li>Queue wait time / latency (seconds).</li>
+                    <li>Maximum wait time / starvation metric.</li>
+                    <li>Intra-match skill rating variance (Var<sub>skill</sub>) for every matchup generated.</li>
+                </ul>
+            </li>
+            <li><strong>Data Analysis:</strong>
+                <ul>
+                    <li><strong>Independent Samples t-tests & ANOVA</strong> (at α = 0.05).</li>
+                    <li>Tests for statistically significant differences in skill variance and wait times between the DinkMatch solver and the standard FIFO queue.</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="slide-number">Slide 11</div>
+    </div>
+
+    <!-- Slide 12 -->
+    <div class="slide">
+        <div class="presenter">Presenter 5</div>
+        <h2>Specific Objective 3.2 (Rating Convergence)</h2>
+        <ul>
+            <li><strong>Objective Statement:</strong> Evaluate the rating convergence and calibration accuracy compared to expert coordinator manual rankings.</li>
+            <li><strong>Methodology:</strong>
+                <ul>
+                    <li>Controlled empirical field trials at racket clubs in Agoo.</li>
+                    <li>Cohort of twenty (n=20) walk-in players.</li>
+                    <li>Resident facility organizers create a baseline "manual ranking" prior to system use.</li>
+                    <li>Players use DinkMatch to play matches and automatically calibrate their PM-Elo ratings.</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="slide-number">Slide 12</div>
+    </div>
+
+    <!-- Slide 13 -->
+    <div class="slide">
+        <div class="presenter">Presenter 5</div>
+        <h2>SOO 3.2: Data Gathered & Analysis</h2>
+        <ul>
+            <li><strong>Data Gathered:</strong>
+                <ul>
+                    <li>The final system-calibrated PM-Elo player ratings and rank positions.</li>
+                    <li>The initial expert coordinator baseline manual rankings for the same cohort (n=20).</li>
+                </ul>
+            </li>
+            <li><strong>Data Analysis:</strong>
+                <ul>
+                    <li><strong>Spearman’s Rank Correlation Coefficient.</strong></li>
+                    <li>Used to determine the statistical correlation between the AI-generated rankings and the human-expert baseline rankings.</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="slide-number">Slide 13</div>
+    </div>
+
+    <!-- Slide 14 -->
+    <div class="slide">
+        <div class="presenter">Presenter 6</div>
+        <h2>Specific Objective 3.3 (System Usability)</h2>
+        <ul>
+            <li><strong>Objective Statement:</strong> Evaluate the system usability and user acceptance of the DinkMatch kiosk interface.</li>
+            <li><strong>Focus Areas:</strong>
+                <ul>
+                    <li>Touchscreen UI responsiveness.</li>
+                    <li>PIN check-in workflow clarity.</li>
+                    <li>Score logging usability.</li>
+                    <li>Generative session recap readability.</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="slide-number">Slide 14</div>
+    </div>
+
+    <!-- Slide 15 -->
+    <div class="slide">
+        <div class="presenter">Presenter 6</div>
+        <h2>SOO 3.3: Data Gathered, Analysis & Expected Outputs</h2>
+        <ul>
+            <li><strong>Data Gathered:</strong> Quantitative perceptual feedback from a 5-point Likert scale survey administered to walk-in players (n=20) and facility coordinators.</li>
+            <li><strong>Data Analysis:</strong> 
+                <ul>
+                    <li>Computation of Weighted Mean (x̄) and Standard Deviation (s).</li>
+                    <li>Interpretation using a standard psychometric class-interval scale (3.41 - 5.00 denotes High/Very High Acceptance).</li>
+                </ul>
+            </li>
+            <li><strong>Expected Output:</strong> The final validation of all features documented in the Chapter 2 <strong>Compliance Matrix (System Proposal)</strong>, resulting in a ready-to-deploy, locally resilient racket sports hub.</li>
+        </ul>
+        <div class="slide-number">Slide 15</div>
+    </div>
+
+</body>
+</html>
