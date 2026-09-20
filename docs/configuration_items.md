@@ -1,3 +1,9 @@
+<style>
+@page { size: landscape; margin: 1cm; }
+table { font-size: 11px; width: 100%; word-wrap: break-word; }
+td { word-break: break-all; }
+</style>
+
 # Configuration Items Identification
 
 This document identifies all baseline Configuration Items (CIs) for the DinkMatch Thesis project.
