@@ -55,7 +55,6 @@ export default configure((/* ctx */) => {
       // ignorePublicFolder: true,
       // minify: false,
       // polyfillModulePreload: true,
-      distDir: 'docs',
 
       extendViteConf(viteConf) {
         viteConf.plugins = [...(viteConf.plugins || []), basicSsl()];
