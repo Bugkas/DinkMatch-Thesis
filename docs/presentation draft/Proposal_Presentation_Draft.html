@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DinkMatch Proposal Presentation Draft</title>
+    <title>DinkMatch Proposal Presentation</title>
     <style>
         body {
             font-family: 'Times New Roman', Times, serif;
@@ -55,7 +55,7 @@
         }
         ul {
             font-size: 30px;
-            line-height: 1.8;
+            line-height: 1.6;
             margin-left: 20px;
             padding-right: 20px;
         }
@@ -81,12 +81,44 @@
         }
         .highlight {
             font-weight: bold;
+            color: #d32f2f;
+        }
+        .note {
+            font-size: 22px;
+            font-style: italic;
+            color: #555;
+            margin-top: -10px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+        }
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+        .exact-objective {
+            background-color: #e3f2fd;
+            border-left: 6px solid #1976d2;
+            padding: 15px;
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 25px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Slide 1 -->
+    <!-- Slide 1: Title -->
     <div class="slide">
         <div class="presenter">Presenter 1</div>
         <div class="title-slide">
@@ -101,262 +133,313 @@
         <div class="slide-number">Slide 1</div>
     </div>
 
-    <!-- Slide 2 -->
+    <!-- Slide 2: The Problem -->
     <div class="slide">
         <div class="presenter">Presenter 1</div>
-        <h2>Situation Analysis: The Operational Problem</h2>
+        <h2>The Problem: Walk-In Racket Clubs</h2>
         <ul>
-            <li>Current racket facilities rely on manual "paddle-rack" systems (First-In, First-Out queueing).</li>
-            <li><span class="highlight">The Skill Disparity Dilemma:</span> FIFO queueing matches players randomly by arrival, ignoring skill level, leading to unbalanced, low-quality matches.</li>
-            <li><span class="highlight">Capacity Blindness:</span> Manual systems cannot dynamically manage court assignments, leading to idle courts despite long player lines.</li>
-            <li><span class="highlight">Social Friction:</span> Physical queues encourage "ghost stacking" and "queue sniping" as players attempt to manipulate matchups.</li>
+            <li><strong>What is the problem?</strong> Recreational clubs use manual "paddle racks" (First-In, First-Out). Players physically stack their rackets to line up for a court.</li>
+            <li><strong>Why does it exist?</strong> Clubs lack affordable digital systems to organize "walk-in" players in real-time.</li>
+            <li><strong>How does this affect the players?</strong>
+                <ul>
+                    <li><span class="highlight">Unfair Matches:</span> Beginners face experts just because they lined up at the same time.</li>
+                    <li><span class="highlight">Cheating the Line (Ghost Stacking):</span> Players skip turns or hide paddles to avoid playing with strangers.</li>
+                    <li><span class="highlight">Empty Courts:</span> Courts stay empty during peak hours because human organizers get overwhelmed tracking who is next.</li>
+                </ul>
+            </li>
         </ul>
         <div class="slide-number">Slide 2</div>
     </div>
 
-    <!-- Slide 3 -->
+    <!-- Slide 3: Research Gap -->
     <div class="slide">
         <div class="presenter">Presenter 1</div>
-        <h2>Research Design & Scope</h2>
+        <h2>The Research Gap</h2>
         <ul>
-            <li><strong>Research Design:</strong> Mixed Research Design (Developmental and Experimental Phases).</li>
-            <li><strong>Developmental Phase:</strong> Designing and building the DinkMatch system, PM-Elo rating engine, and Likha ERP synchronization.</li>
-            <li><strong>Experimental Phase:</strong> Validating efficiency via Monte Carlo simulations and field trials with walk-in players.</li>
-            <li><strong>Time & Place:</strong> June 2026 to March 2027 at the College of Computer Science (DMMMSU-SLUC) and racket clubs in Agoo, La Union.</li>
+            <li>Software like <em>CourtReserve</em> exists, but it's only for booking a court days in advance.</li>
+            <li>Modern video games match players perfectly by skill, but they require massive, expensive cloud servers and continuous internet connections.</li>
+            <li><strong>The Gap:</strong> There is no digital system built for physical racket clubs that automatically organizes walk-in players by skill in <em>real-time</em>, using low-cost hardware that works even if the internet goes down.</li>
         </ul>
         <div class="slide-number">Slide 3</div>
     </div>
 
-    <!-- Slide 4 -->
+    <!-- Slide 4: Proposed Solution & Objectives -->
     <div class="slide">
         <div class="presenter">Presenter 2</div>
-        <h2>Specific Objective 1 (Design Phase)</h2>
+        <h2>Our Proposed Solution: DinkMatch</h2>
         <ul>
-            <li><strong>Objective Statement:</strong> Design and adapt a stateless, zero-sum point-margin-scaled Elo rating engine (PM-Elo) and a multi-objective matchmaking solver based on a parameterized cost function.</li>
-            <li><strong>Why PM-Elo?</strong> 
+            <li>We will replace the physical paddle rack with a <strong>Digital Touchscreen Kiosk</strong>.</li>
+            <li>Players simply type a 4-digit PIN to check-in. The system will act as a "Virtual Organizer", automatically grouping players into fair matches based on their hidden skill ratings.</li>
+            <li><strong>Preview of our 3 Objectives:</strong>
                 <ul>
-                    <li>Calculates rating updates based on actual point share (ratio of points won) instead of a binary win/loss.</li>
-                    <li>Operates statelessly to support local, offline-first kiosk functionality.</li>
+                    <li><strong>Objective 1:</strong> Design the math and rules for skill rating.</li>
+                    <li><strong>Objective 2:</strong> Build the software kiosk and AI Referee.</li>
+                    <li><strong>Objective 3:</strong> Test the system with simulations and real players.</li>
                 </ul>
             </li>
-            <li><strong>Matchmaking Solver:</strong> Dynamically selects the optimal group of 4 players from the queue based on a configurable cost function.</li>
         </ul>
         <div class="slide-number">Slide 4</div>
     </div>
 
-    <!-- Slide 5 -->
+    <!-- Slide 5: Scope -->
     <div class="slide">
         <div class="presenter">Presenter 2</div>
-        <h2>SOO 1: Data Gathered</h2>
+        <h2>Scope, Time, and Place of the Study</h2>
         <ul>
-            <li><strong>Rating Engine Parameters:</strong>
+            <li><strong>Timeline:</strong> June 2026 to March 2027.</li>
+            <li><strong>Location:</strong> 
                 <ul>
-                    <li>Initial rating seeds (e.g., R0 = 1200)</li>
-                    <li>K-factor scaling constants (e.g., K = 32)</li>
-                    <li>Anti-carry discount modifiers to prevent artificial rating inflation.</li>
-                    <li>Partner rating change caps.</li>
-                </ul>
-            </li>
-            <li><strong>Matchmaking Cost Function Parameters:</strong>
-                <ul>
-                    <li>Skill variance weight (w<sub>skill</sub>)</li>
-                    <li>Wait penalty weight (w<sub>wait</sub>) across 5 operational modes (Fair Play, Social Mixer, Balanced Mix, Competitive Mix, All-Star Match).</li>
+                    <li>The software engineering and laboratory testing will be done at the College of Computer Science, DMMMSU-SLUC.</li>
+                    <li>The live field trials with real players will be conducted at racket clubs in Agoo, La Union.</li>
                 </ul>
             </li>
         </ul>
         <div class="slide-number">Slide 5</div>
     </div>
 
-    <!-- Slide 6 -->
+    <!-- Slide 6: Research Design -->
     <div class="slide">
         <div class="presenter">Presenter 2</div>
-        <h2>SOO 1: Data Analysis</h2>
+        <h2>Methodology: Mixed Research Design</h2>
+        <span class="note">Why mixed? Because we must first build the system, and then test it scientifically.</span>
         <ul>
-            <li><strong>Formal Mathematical Verification:</strong> Ensuring the cost function formulas and rating updates are logically sound.</li>
-            <li><strong>Internal Consistency Testing:</strong> Validating that the formulas react predictably to various match outcomes.</li>
-            <li><strong>Constraint Verification:</strong>
+            <li><strong>1. Developmental Phase (Building it):</strong>
                 <ul>
-                    <li>Validating non-negativity constraints for wait penalties.</li>
-                    <li>Ensuring zero-sum balance (points gained by the winner perfectly offset points lost by the loser).</li>
-                    <li>Verifying numerical stability across extreme score margins.</li>
+                    <li>This phase is where we design the mathematical formulas, write the code, and build the touchscreen kiosk software (following the Software Development Life Cycle).</li>
+                </ul>
+            </li>
+            <li><strong>2. Experimental Testing Phase (Proving it works):</strong>
+                <ul>
+                    <li>This phase is where we put the finished software in a controlled environment to test it. We will test it using computer simulations (fake players) and field trials (real players) to prove it solves the problem.</li>
                 </ul>
             </li>
         </ul>
         <div class="slide-number">Slide 6</div>
     </div>
 
-    <!-- Slide 7 -->
+    <!-- Slide 7: SOO 1 Description -->
     <div class="slide">
         <div class="presenter">Presenter 3</div>
-        <h2>Specific Objective 2 (Development Phase)</h2>
+        <h2>Specific Objective 1: The Rating System</h2>
+        <div class="exact-objective">Objective 1: Design and adapt a stateless PM-Elo rating engine and a multi-objective matchmaking solver.</div>
         <ul>
-            <li><strong>Objective Statement:</strong> Develop the DinkMatch system utilizing specific advanced technologies.</li>
-            <li><strong>Core Subsystems Built:</strong>
-                <ul>
-                    <li><strong>Client Kiosk:</strong> An offline-first touchscreen application built using Vue 3 and Quasar.</li>
-                    <li><strong>Synchronization Middleware:</strong> Asynchronous database syncing to Likha ERP via the <code>@likha-erp/likha-sdk</code>.</li>
-                    <li><strong>Edge Computer Vision:</strong> YOLO11n-pose line-fault detection running locally on edge hardware.</li>
-                    <li><strong>Generative AI:</strong> LLM-driven session recap engine for court coordinators.</li>
-                </ul>
-            </li>
+            <li><strong>What this means:</strong> We will design the mathematical "brain" of the system.</li>
+            <li><strong>The Matchmaking Logic:</strong> The algorithm will constantly balance two goals: matching players of identical skill levels, while making sure nobody waits in line too long.</li>
         </ul>
         <div class="slide-number">Slide 7</div>
     </div>
 
-    <!-- Slide 8 -->
+    <!-- Slide 8: SOO 1 Data Gathered -->
     <div class="slide">
         <div class="presenter">Presenter 3</div>
-        <h2>SOO 2: Data Gathered</h2>
+        <h2>SOO 1: Data Gathered (System Parameters)</h2>
+        <span class="note">The strict rules we program into the math formula:</span>
         <ul>
-            <li><strong>System Telemetry (Alpha & Beta Testing):</strong>
-                <ul>
-                    <li>Local database write success rates and offline data persistence rates.</li>
-                    <li>API packet delivery rates to Likha ERP.</li>
-                    <li>Local database buffer usage (KB) and client UI response latency (ms).</li>
-                </ul>
-            </li>
-            <li><strong>Computer Vision Logs:</strong>
-                <ul>
-                    <li>True Positive (TP) counts of accurately identified foot-faults.</li>
-                    <li>False Positive (FP) and False Negative (FN) detection logs during court trials.</li>
-                </ul>
-            </li>
+            <li><strong>Starting Rating:</strong> Every new player will start at the exact same baseline (e.g., 1200 points).</li>
+            <li><strong>Scaling Factor (K-Factor):</strong> A strict limit on how much a player's score can change in one single game. This prevents a player from reaching "Pro" rank overnight just by getting lucky.</li>
+            <li><strong>Anti-Carry Discount:</strong> A rule that prevents a highly-skilled player from artificially boosting a beginner friend's rating during a doubles match.</li>
         </ul>
         <div class="slide-number">Slide 8</div>
     </div>
 
-    <!-- Slide 9 -->
+    <!-- Slide 9: SOO 1 Data Analysis -->
     <div class="slide">
         <div class="presenter">Presenter 3</div>
-        <h2>SOO 2: Data Analysis</h2>
+        <h2>SOO 1: Data Analysis (Mathematical Verification)</h2>
         <ul>
-            <li><strong>Descriptive Statistics for Telemetry:</strong>
-                <ul>
-                    <li>Percentage frequencies, arithmetic mean (x̄), and standard deviation (s) for network latency and data sync success rates.</li>
-                </ul>
-            </li>
-            <li><strong>Classification Accuracy Metrics (Computer Vision):</strong>
-                <ul>
-                    <li><strong>Precision:</strong> Proportion of flagged foot-fault alerts that were valid.</li>
-                    <li><strong>Recall:</strong> Proportion of actual line violations successfully detected.</li>
-                    <li><strong>F1-Score:</strong> Harmonic mean balancing precision and recall.</li>
-                </ul>
-            </li>
+            <li><strong>How do we prove the math works?</strong> We test the formula to guarantee the <strong>"Zero-Sum"</strong> rule is never broken.</li>
+            <li><strong>What is Zero-Sum?</strong> Think of points as a currency. The exact amount of points gained by the winning team is subtracted from the losing team.</li>
+            <li>By verifying this mathematically, we ensure that points are never "magically created," meaning the player ratings will never artificially spiral out of control over time.</li>
         </ul>
         <div class="slide-number">Slide 9</div>
     </div>
 
-    <!-- Slide 10 -->
+    <!-- Slide 10: SOO 2 Description -->
     <div class="slide">
         <div class="presenter">Presenter 4</div>
-        <h2>Specific Objective 3.1 (Matchmaking Efficiency)</h2>
+        <h2>Specific Objective 2: Building the App</h2>
+        <div class="exact-objective">Objective 2: Develop the DinkMatch system featuring an offline-first kiosk, cloud sync, and an edge AI line-fault detector.</div>
         <ul>
-            <li><strong>Objective Statement:</strong> Evaluate the matchmaking efficiency and queue dynamics of the DinkMatch system.</li>
-            <li><strong>Methodology:</strong>
-                <ul>
-                    <li>Discrete-event simulations built in Python using the SimPy library.</li>
-                    <li>Synthetic player cohorts (N=50) modeled on Poisson arrival processes.</li>
-                    <li>Two test branches: Control Group (Strict FIFO) vs. Experimental Group (DinkMatch Multi-Objective Solver).</li>
-                </ul>
-            </li>
+            <li><strong>The Kiosk:</strong> We will build the touchscreen app. It is "Offline-First," meaning if the club loses internet, the queue keeps running perfectly locally.</li>
+            <li><strong>The AI Referee (Computer Vision):</strong> We will point a basic webcam at the court line. An AI will track the players' feet and sound an alarm if they step on the line (foot-fault).</li>
         </ul>
         <div class="slide-number">Slide 10</div>
     </div>
 
-    <!-- Slide 11 -->
+    <!-- Slide 11: SDLC Framework -->
     <div class="slide">
         <div class="presenter">Presenter 4</div>
-        <h2>SOO 3.1: Data Gathered & Analysis</h2>
+        <h2>SOO 2: Software Development Life Cycle</h2>
+        <span class="note">The 6-Phase process we will follow to build the system:</span>
+        <div style="display: flex; gap: 30px; align-items: center; margin-top: 10px;">
+            <div style="flex: 1.2; text-align: center;">
+                <img src="iterativesdlc.png" alt="SDLC Framework" style="max-width: 100%; max-height: 400px; border: 2px solid #333;">
+                <div style="font-weight: bold; font-size: 20px; margin-top: 10px;">Figure 2: Iterative Software Development Life Cycle (SDLC) Framework</div>
+            </div>
+            <div style="flex: 1;">
+                <ul style="font-size: 24px; line-height: 1.5; padding-right: 0; margin-left: 0;">
+                    <li><strong>1. Planning:</strong> Defining goals and hardware budget.</li>
+                    <li><strong>2. Requirements:</strong> Identifying queue bottlenecks.</li>
+                    <li><strong>3. Design:</strong> Mapping out the database and UI.</li>
+                    <li><strong>4. Implementation:</strong> Coding the app & AI.</li>
+                    <li><strong>5. Testing:</strong> Alpha (lab tests) & Beta (field trials).</li>
+                    <li><strong>6. Evaluation:</strong> Final statistical analysis.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide-number">Slide 11</div>
+    </div>
+
+    <!-- Slide 12: SOO 2 Data Gathered & Analysis -->
+    <div class="slide">
+        <div class="presenter">Presenter 4</div>
+        <h2>SOO 2: Data Gathered & Data Analysis</h2>
         <ul>
-            <li><strong>Data Gathered (from 50 Simulation Runs):</strong>
+            <li><strong>Data Gathered:</strong>
                 <ul>
-                    <li>Queue wait time / latency (seconds).</li>
-                    <li>Maximum wait time / starvation metric.</li>
-                    <li>Intra-match skill rating variance (Var<sub>skill</sub>) for every matchup generated.</li>
+                    <li>App Crash Logs & Synchronization success rates.</li>
+                    <li>AI Referee tracking logs (How many foot-faults were flagged).</li>
                 </ul>
             </li>
             <li><strong>Data Analysis:</strong>
                 <ul>
-                    <li><strong>Independent Samples t-tests & ANOVA</strong> (at α = 0.05).</li>
-                    <li>Tests for statistically significant differences in skill variance and wait times between the DinkMatch solver and the standard FIFO queue.</li>
-                </ul>
-            </li>
-        </ul>
-        <div class="slide-number">Slide 11</div>
-    </div>
-
-    <!-- Slide 12 -->
-    <div class="slide">
-        <div class="presenter">Presenter 5</div>
-        <h2>Specific Objective 3.2 (Rating Convergence)</h2>
-        <ul>
-            <li><strong>Objective Statement:</strong> Evaluate the rating convergence and calibration accuracy compared to expert coordinator manual rankings.</li>
-            <li><strong>Methodology:</strong>
-                <ul>
-                    <li>Controlled empirical field trials at racket clubs in Agoo.</li>
-                    <li>Cohort of twenty (n=20) walk-in players.</li>
-                    <li>Resident facility organizers create a baseline "manual ranking" prior to system use.</li>
-                    <li>Players use DinkMatch to play matches and automatically calibrate their PM-Elo ratings.</li>
+                    <li><strong>For the App:</strong> We will use Mean and Standard Deviation to measure how stable and fast the app is.</li>
+                    <li><strong>For the AI Referee:</strong> We will measure <em>Precision and Recall</em>. This will tell us exactly how many line-faults the AI caught correctly versus how many "false alarms" it made.</li>
                 </ul>
             </li>
         </ul>
         <div class="slide-number">Slide 12</div>
     </div>
 
-    <!-- Slide 13 -->
+    <!-- Slide 13: SOO 3.1 Description -->
     <div class="slide">
         <div class="presenter">Presenter 5</div>
-        <h2>SOO 3.2: Data Gathered & Analysis</h2>
+        <h2>Specific Objective 3.1: Computer Simulations</h2>
+        <div class="exact-objective">Objective 3.1: Evaluate matchmaking efficiency and queue dynamics using Monte Carlo simulations.</div>
         <ul>
-            <li><strong>Data Gathered:</strong>
-                <ul>
-                    <li>The final system-calibrated PM-Elo player ratings and rank positions.</li>
-                    <li>The initial expert coordinator baseline manual rankings for the same cohort (n=20).</li>
-                </ul>
-            </li>
-            <li><strong>Data Analysis:</strong>
-                <ul>
-                    <li><strong>Spearman’s Rank Correlation Coefficient.</strong></li>
-                    <li>Used to determine the statistical correlation between the AI-generated rankings and the human-expert baseline rankings.</li>
-                </ul>
-            </li>
+            <li><strong>What is a Monte Carlo Simulation?</strong> It is a computer program that generates thousands of "fake" virtual players arriving at a court to test our queue logic.</li>
+            <li><strong>Why do we do this?</strong> Instead of waiting weeks to test rush-hour traffic in real life, we can simulate 50 players flooding the court in seconds. This stress-tests the system before humans use it.</li>
         </ul>
         <div class="slide-number">Slide 13</div>
     </div>
 
-    <!-- Slide 14 -->
+    <!-- Slide 14: SOO 3.1 Data Gathered & Analysis -->
     <div class="slide">
-        <div class="presenter">Presenter 6</div>
-        <h2>Specific Objective 3.3 (System Usability)</h2>
+        <div class="presenter">Presenter 5</div>
+        <h2>SOO 3.1: Data Gathered & Data Analysis</h2>
         <ul>
-            <li><strong>Objective Statement:</strong> Evaluate the system usability and user acceptance of the DinkMatch kiosk interface.</li>
-            <li><strong>Focus Areas:</strong>
+            <li><strong>Data Gathered:</strong>
                 <ul>
-                    <li>Touchscreen UI responsiveness.</li>
-                    <li>PIN check-in workflow clarity.</li>
-                    <li>Score logging usability.</li>
-                    <li>Generative session recap readability.</li>
+                    <li>How long did the virtual players wait in line? (Queue Wait Time)</li>
+                    <li>How far apart in skill were the players matched together? (Skill Variance)</li>
+                </ul>
+            </li>
+            <li><strong>Data Analysis:</strong>
+                <ul>
+                    <li>We will use statistical tests (T-tests and ANOVA) to compare DinkMatch against the old manual paddle rack.</li>
+                    <li>This will mathematically prove whether our digital system is faster and fairer than the manual physical line.</li>
                 </ul>
             </li>
         </ul>
         <div class="slide-number">Slide 14</div>
     </div>
 
-    <!-- Slide 15 -->
+    <!-- Slide 15: SOO 3.2 Description -->
     <div class="slide">
-        <div class="presenter">Presenter 6</div>
-        <h2>SOO 3.3: Data Gathered, Analysis & Expected Outputs</h2>
+        <div class="presenter">Presenter 5</div>
+        <h2>Specific Objective 3.2: Real-World Testing</h2>
+        <div class="exact-objective">Objective 3.2: Evaluate rating calibration accuracy compared to expert manual rankings.</div>
         <ul>
-            <li><strong>Data Gathered:</strong> Quantitative perceptual feedback from a 5-point Likert scale survey administered to walk-in players (n=20) and facility coordinators.</li>
-            <li><strong>Data Analysis:</strong> 
-                <ul>
-                    <li>Computation of Weighted Mean (x̄) and Standard Deviation (s).</li>
-                    <li>Interpretation using a standard psychometric class-interval scale (3.41 - 5.00 denotes High/Very High Acceptance).</li>
-                </ul>
-            </li>
-            <li><strong>Expected Output:</strong> The final validation of all features documented in the Chapter 2 <strong>Compliance Matrix (System Proposal)</strong>, resulting in a ready-to-deploy, locally resilient racket sports hub.</li>
+            <li><strong>What this means:</strong> We need to prove that the AI actually knows who is good and who is a beginner.</li>
+            <li><strong>The Test:</strong> We will bring the completed system to a local club and have 20 real players use it for a live session.</li>
         </ul>
         <div class="slide-number">Slide 15</div>
+    </div>
+
+    <!-- Slide 16: SOO 3.2 Data Gathered & Analysis -->
+    <div class="slide">
+        <div class="presenter">Presenter 5</div>
+        <h2>SOO 3.2: Data Gathered & Data Analysis</h2>
+        <ul>
+            <li><strong>Data Gathered:</strong>
+                <ul>
+                    <li>Before they play, a human Coach will rank the 20 players based on real-life experience.</li>
+                    <li>After the session, we will extract the automated rankings generated by our AI.</li>
+                </ul>
+            </li>
+            <li><strong>Data Analysis:</strong>
+                <ul>
+                    <li>We will use <em>Spearman’s Rank Correlation</em>.</li>
+                    <li>This statistical tool compares the AI's list against the Coach's list. If they match closely, we will prove the AI successfully evaluated player skill without human help.</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="slide-number">Slide 16</div>
+    </div>
+
+    <!-- Slide 17: SOO 3.3 Description -->
+    <div class="slide">
+        <div class="presenter">Presenter 6</div>
+        <h2>Specific Objective 3.3: User Acceptance</h2>
+        <div class="exact-objective">Objective 3.3: Evaluate system usability and user acceptance.</div>
+        <ul>
+            <li><strong>What this means:</strong> It does not matter if the math is perfect if players hate using the screen. We need to know if the end-users actually like the system.</li>
+            <li><strong>Focus Areas:</strong> Was the touchscreen fast? Was typing the PIN easy? Did the matches feel fair?</li>
+        </ul>
+        <div class="slide-number">Slide 17</div>
+    </div>
+
+    <!-- Slide 18: SOO 3.3 Data Gathered -->
+    <div class="slide">
+        <div class="presenter">Presenter 6</div>
+        <h2>SOO 3.3: Data Gathered (Usability Surveys)</h2>
+        <ul>
+            <li><strong>The Survey:</strong> After the real-world trials, we will give the 20 players and the club organizers a 5-point survey (Likert scale).</li>
+            <li><strong>The Scale:</strong>
+                <ul>
+                    <li>5 = Strongly Agree</li>
+                    <li>4 = Agree</li>
+                    <li>3 = Neutral</li>
+                    <li>2 = Disagree</li>
+                    <li>1 = Strongly Disagree</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="slide-number">Slide 18</div>
+    </div>
+
+    <!-- Slide 19: SOO 3.3 Data Analysis -->
+    <div class="slide">
+        <div class="presenter">Presenter 6</div>
+        <h2>SOO 3.3: Data Analysis (Interpreting Results)</h2>
+        <ul>
+            <li>We will calculate the <strong>Weighted Mean</strong> of all survey responses to determine the overall score. We use this table to give it a Descriptive Rating:</li>
+        </ul>
+        <table>
+            <tr>
+                <th>Scale</th>
+                <th>Statistical Range</th>
+                <th>Descriptive Rating</th>
+            </tr>
+            <tr><td>5</td><td>4.21 - 5.00</td><td>Very High Acceptance</td></tr>
+            <tr><td>4</td><td>3.41 - 4.20</td><td>High Acceptance</td></tr>
+            <tr><td>3</td><td>2.61 - 3.40</td><td>Moderate Acceptance</td></tr>
+            <tr><td>2</td><td>1.81 - 2.60</td><td>Low Acceptance</td></tr>
+            <tr><td>1</td><td>1.00 - 1.80</td><td>Very Low Acceptance</td></tr>
+        </table>
+        <div class="slide-number">Slide 19</div>
+    </div>
+
+    <!-- Slide 20: Expected Output -->
+    <div class="slide">
+        <div class="presenter">Presenter 6</div>
+        <h2>Expected Final Output</h2>
+        <ul>
+            <li>A fully functional, offline-resilient digital kiosk tailored specifically for recreational racket clubs.</li>
+            <li>It completely eliminates human bias, prevents queue cheating, and mathematically guarantees the fairest possible matches for everyday community players.</li>
+            <li style="margin-top: 50px; border: none; font-weight: bold; text-align: center; color: #1976d2; font-size: 36px;">End of Presentation. Thank you!</li>
+        </ul>
+        <div class="slide-number">Slide 20</div>
     </div>
 
 </body>
